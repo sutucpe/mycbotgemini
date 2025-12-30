@@ -1,116 +1,142 @@
-Bu proje, Accutane (Roaccutane) tedavisi hakkında merak edilenleri yanıtlamak üzere tasarlanmış, Hibrit Mimariye sahip akıllı bir sohbet botudur.
+💊 Accutane AI Asistanı
+Hibrit Mimariye Sahip Akıllı Sağlık Chatbotu
+🧠 Proje Hakkında
 
-Uygulama, kullanıcı niyetini anlamak için Scikit-Learn (SVM), tıbbi sorulara kesin ve doğru cevaplar vermek için ise RAG (Retrieval-Augmented Generation) & Gemini teknolojilerini birleştirir.
+Accutane AI Asistanı, Accutane (Roaccutane / Isotretinoin) tedavisi hakkında sık sorulan sorulara doğru, hızlı ve kaynaklı cevaplar vermek üzere tasarlanmış hibrit mimarili bir sohbet botudur.
 
-Chat Ornekleri 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a" width="22%" />
-  <img src="https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606" width="22%" />
-  <img src="https://github.com/user-attachments/assets/3d7bbfd0-4905-4c67-9d52-9220537db81b" width="22%" />
-  <img src="https://github.com/user-attachments/assets/0d7565f2-2a61-4108-992f-81ea5be490a7" width="22%" />
-</p>
+Bu projede:
 
+🧭 Intent Classification ile kullanıcının niyeti anlaşılır
 
-Model,Görevi,Neden Seçildi?
-Gemini 2.5 Flash,LLM (Cevap Üretici),"⚡ Hız ve Verimlilik: ""Flash"" serisi, düşük gecikme süresi (low latency) ile bilinir. Sohbet botlarında kullanıcının saniyelerce beklememesi kritiktir. Ayrıca uzun bağlam pencerelerini (context window) çok daha maliyet etkin yöneterek RAG süreçleri için ideal bir denge sunar."
+📚 RAG (Retrieval-Augmented Generation) ile tıbbi doğruluk sağlanır
 
-text-embedding-004,Embedding (Vektörleştirme),🎯 Semantik Hassasiyet: Google'ın en yeni embedding modelidir. Eski versiyonlara (001) kıyasla metinlerin anlamsal ilişkilerini çok daha iyi kavrar. Tıbbi terimlerin ve kullanıcı sorularının eşleştirilmesinde (Retrieval) yüksek doğruluk sağlar.
+⚡ Gereksiz LLM çağrıları engellenir, maliyet ve gecikme azaltılır
 
-Scikit-Learn SVC,Intent Classifier,"🛡️ Hafif ve Kararlı: Her soru için LLM çağırmak maliyetlidir. Basit metin sınıflandırma işlerinde klasik ML (SVM), derin öğrenmeye göre çok daha hızlı ve kaynak dostudur."
-Bu asistanın en önemli özelliği, her soruyu doğrudan LLM'e (Büyük Dil Modeli) göndermemesidir. Akıllı bir Yönlendirme (Routing) mekanizması kullanır. Bu sayede hem maliyet düşer hem de yanıt hızı artar.
+Amaç: “Her soruyu LLM’e atmak yerine, akıllıca yönlendirmek.”
 
-Karar Mekanizması Nasıl Çalışır?
-Sistem, kullanıcının sorusunu önce Niyet Sınıflandırıcıya (Intent Classifier) sokar ve çıkan sonuca göre iki yoldan birini seçer:
+💬 Chatbot Örnekleri
+<p align="center"> <img src="https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a" width="22%" /> <img src="https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606" width="22%" /> <img src="https://github.com/user-attachments/assets/3d7bbfd0-4905-4c67-9d52-9220537db81b" width="22%" /> <img src="https://github.com/user-attachments/assets/0d7565f2-2a61-4108-992f-81ea5be490a7" width="22%" /> </p>
 
-1. Deterministik Yol (Hızlı Yanıt) ⚡
-Eğer tahmin edilen niyet (intent) aşağıdakilerden biriyse, RAG (Belge Tarama) devre dışı bırakılır ve önceden tanımlı sabit yanıtlar döner:
+| Model / Araç           | Görevi              | Neden Seçildi                                                                        |
+| ---------------------- | ------------------- | ------------------------------------------------------------------------------------ |
+| **Gemini 2.5 Flash**   | LLM (Cevap Üretimi) | ⚡ Düşük gecikme süresi, uzun bağlamı maliyet-etkin yönetmesi ve RAG için ideal denge |
+| **text-embedding-004** | Embedding           | 🎯 Tıbbi terimlerde yüksek semantik hassasiyet, güçlü retrieval başarımı             |
+| **Scikit-Learn SVC**   | Intent Classifier   | 🛡️ Hafif, kararlı ve LLM’e kıyasla çok daha düşük maliyetli                         |
 
-greeting (Selamlaşma)
+🚦 Akıllı Yönlendirme (Routing) Mantığı
 
-goodbye (Vedalaşma)
+Bu sistemin en kritik farkı:
+❌ Her soruyu doğrudan LLM’e göndermemesi
 
-unrelated (Konu dışı / Alakasız sorular)
+Bunun yerine:
 
-bot_identity_and_disclaimer (Bot kimliği ve yasal uyarı)
+Kullanıcı sorusu Intent Classifier’dan geçer
 
-Neden? Bu sorular sosyal veya kapsam dışıdır. Modelin 40 sayfalık bir PDF'i taramasına gerek yoktur. Cevap kesindir.
+Çıkan niyete göre en uygun yol seçilir
 
-2. RAG Yolu (Belge Tabanlı Yanıt) 📚
-Eğer niyet tıbbi bir bilgi gerektiriyorsa (örn: dozaj, yan etkiler, hamilelik riskleri) veya model niyetten emin değilse (Confidence < %70):
+🛤️ Karar Mekanizması Nasıl Çalışır?
+1️⃣ Deterministik Yol — Hızlı Yanıt ⚡
 
-Sistem accutane.pdf dosyasını tarar.
+Eğer intent aşağıdakilerden biriyse:
 
-En alakalı parçaları bulur.
+greeting → Selamlaşma
 
-LLM'e (Gemini) şu talimatı verir: "Sadece bu metindeki bilgileri kullanarak cevap ver."
+goodbye → Vedalaşma
 
-Neden? İlaç kullanımı ciddi bir konudur. Bu yöntem halüsinasyon (uydurma) riskini minimize eder ve cevabın kaynağa dayalı olmasını sağlar.
+unrelated → Konu dışı
 
+bot_identity_and_disclaimer → Bot kimliği / yasal uyarı
+
+📌 Ne olur?
+
+RAG devreye girmez
+
+LLM çağrısı yapılmaz
+
+Önceden tanımlı sabit cevap döner
+
+🧠 Neden?
+Bu soruların cevabı nettir.
+40 sayfalık PDF taramak gereksizdir.
+
+2️⃣ RAG Yolu — Belge Tabanlı Yanıt 📚
+
+Eğer:
+
+Soru tıbbi bilgi içeriyorsa (doz, yan etki, hamilelik vb.)
+
+Confidence < %70 ise
+
+📌 Ne olur?
+
+accutane.pdf taranır
+
+En alakalı metin parçaları seçilir
+
+LLM’e şu kural verilir:
+
+“Sadece bu dokümandaki bilgilere dayanarak cevap ver.”
+
+🛡️ Neden?
+Tıbbi alanda halüsinasyon kabul edilemez.
+Bu yaklaşım kaynaklı ve güvenli cevap üretir.
 
 📊 Performans Metrikleri
-Modelin başarısı hem sınıflandırma hem de cevap oluşturma kalitesi açısından test edilmiştir. İşte sonuçlar:
+🎯 1. Intent Classification Başarımı
 
-1. Niyet Sınıflandırma Başarısı (Intent Classifier) 🎯
-Sınıflandırıcı, %78 genel doğruluk (accuracy) ile çalışmaktadır. Özellikle sosyal niyetlerde (selamlaşma vb.) başarı %100'e yakındır.
+Genel Accuracy: %78
 
-Sınıflandırma Raporu Özeti:
+Sosyal niyetlerde başarı: ≈ %100
+| Intent                 | Precision | Recall | F1    |
+| ---------------------- | --------- | ------ | ----- |
+| greeting               | 1.00      | 0.95   | 0.97  |
+| goodbye                | 1.00      | 0.80   | 0.89  |
+| unrelated              | 0.89      | 0.93   | 0.91  |
+| bot_identity           | 0.86      | 0.95   | 0.90  |
+| Tıbbi Intentler (Ort.) | ~0.70     | ~0.70  | ~0.70 |
 
-Intent (Niyet)	Precision	Recall	F1-Score
-greeting (Selamlaşma)	1.00	0.95	0.97
-goodbye (Vedalaşma)	1.00	0.80	0.89
-unrelated (Alakasız)	0.89	0.93	0.91
-bot_identity	0.86	0.95	0.90
-Tıbbi Niyetler (Ortalama)	~0.70	~0.70	~0.70
+img src="https://github.com/user-attachments/assets/0b2bfe1b-b23b-4ba3-9362-b46b359227f0" width="25%" />
 
-<img
-  src="https://github.com/user-attachments/assets/0b2bfe1b-b23b-4ba3-9362-b46b359227f0"
-  width="25%"
-  alt="Figure_1"
-/>
+📌 Not:
+Tıbbi intentlerin birbirine karışması doğaldır.
+Bu durumda sistem her zaman RAG’a yönlendiği için kullanıcı doğru cevabı alır.
 
+🌟 2. RAG Başarımı (RAGAS)
 
-Not: Tıbbi niyetlerin birbirine karışması (örn: yan etkiler vs. uyarılar) doğaldır, ancak sistem bu durumlarda her halükarda RAG'a gittiği için kullanıcı doğru cevabı almaya devam eder.
+RAG hattı RAGAS Framework ile değerlendirildi:
 
-2. RAG Başarısı (RAGAS Değerlendirmesi) 🌟
-RAG (Retrieval-Augmented Generation) hattının kalitesi, RAGAS framework'ü kullanılarak test edilmiştir. Sonuçlar modelin güvenilirliğini kanıtlamaktadır:
+🏆 Faithfulness: 1.00 / 1.00
 
-Faithfulness (Sadakat): 1.00 / 1.00 🏆
+Model asla doküman dışına çıkmıyor.
 
-Anlamı: Model, kendisine verilen doküman dışına asla çıkmıyor ve bilgi uydurmuyor. Verilen cevapların tamamı dokümandan türetilmiş.
+🧠 Context Recall: 0.975 / 1.00
 
-Context Recall (Bağlam Hatırlama): 0.975 / 1.00 🧠
+Gerekli bilginin %97.5’i doğru şekilde getiriliyor.
 
-Anlamı: Sistem, sorulan soruya cevap vermek için gereken bilgiyi doküman içinden %97.5 oranında başarıyla bulup getiriyor.
+🎯 Answer Relevancy: ~0.87
 
-Answer Relevancy:
-
-Sorulan sorulara verilen cevapların alaka düzeyi ortalama 0.87 civarındadır.
+Cevaplar soruyla yüksek oranda alakalı.
 
 🍳 Veri Seti Hazırlama Süreci
-Bu başarının arkasında titiz bir veri hazırlama süreci yatmaktadır:
 
-Kategorizasyon: Kullanıcı soruları 11 farklı sınıfa ayrıldı.
+Bu başarının arkasında sistematik bir veri üretimi vardır:
 
-Yapay Zeka Destekli Veri Üretimi: Gemini 3 Pro kullanılarak, her kategori için varyasyonlu cümleler üretildi. Toplamda 1200 cümlelik bir veri seti oluşturuldu.
+Kategorizasyon
 
-Eğitim: Veri seti %80 Eğitim - %20 Test olarak bölündü ve SVC (Support Vector Classifier) modeli eğitildi.
+Toplam 11 intent sınıfı belirlendi
 
-🛠️ Kurulum ve Çalıştırma
-1. Gereksinimleri Yükle
-Bash
+Yapay Zeka Destekli Üretim
 
-pip install streamlit pandas scikit-learn langchain langchain-community langchain-google-genai langchain-chroma pypdf ragas
-pip isntall -r requirements.txt
-2. Dosyaları Kontrol Et
-training.csv: Eğitim verisi.
+Gemini 3 Pro kullanılarak
 
-accutane.pdf: Bilgi kaynağı (Prospektüs).
+1200 etiketli cümle oluşturuldu
 
-3. Çalıştır
+Eğitim
 
-streamlit run app.py
-⚠️ Yasal Uyarı
-Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+%80 Eğitim / %20 Test
+
+SVC (Support Vector Classifier) ile model eğitildi
+
 
 
 
