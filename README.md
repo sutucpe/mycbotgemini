@@ -3,8 +3,8 @@ Bu proje, Accutane (Roaccutane) tedavisi hakkında merak edilenleri yanıtlamak 
 Uygulama, kullanıcı niyetini anlamak için Scikit-Learn (SVM), tıbbi sorulara kesin ve doğru cevaplar vermek için ise RAG (Retrieval-Augmented Generation) & Gemini teknolojilerini birleştirir.
 
 Ornek Gorseller
-![alt text](1_page-0001.jpg) ![alt text](3_page-0001.jpg) ![alt text](<Accutane AI Assistant_page-0001.jpg>) ![alt text](extra_page-0001.jpg)
-🧠 Mimari ve Routing Mantığı (Kritik Bölüm) 🚦
+<img width="1000" height="700" alt="Figure_1" src="https://github.com/user-attachments/assets/3869f169-aaad-4096-8b2d-74c8ea30868e" />
+
 
 Model,Görevi,Neden Seçildi?
 Gemini 2.5 Flash,LLM (Cevap Üretici),"⚡ Hız ve Verimlilik: ""Flash"" serisi, düşük gecikme süresi (low latency) ile bilinir. Sohbet botlarında kullanıcının saniyelerce beklememesi kritiktir. Ayrıca uzun bağlam pencerelerini (context window) çok daha maliyet etkin yöneterek RAG süreçleri için ideal bir denge sunar."
@@ -102,3 +102,4 @@ accutane.pdf: Bilgi kaynağı (Prospektüs).
 streamlit run app.py
 ⚠️ Yasal Uyarı
 Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+
