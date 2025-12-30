@@ -3,7 +3,11 @@ Bu proje, Accutane (Roaccutane) tedavisi hakkında merak edilenleri yanıtlamak 
 Uygulama, kullanıcı niyetini anlamak için Scikit-Learn (SVM), tıbbi sorulara kesin ve doğru cevaplar vermek için ise RAG (Retrieval-Augmented Generation) & Gemini teknolojilerini birleştirir.
 
 Ornek Gorseller
-<img width="1000" height="700" alt="Figure_1" src="https://github.com/user-attachments/assets/3869f169-aaad-4096-8b2d-74c8ea30868e" />
+![1_page-0001](https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a) ![3_page-0001](https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606) ![Accutane AI Assistant_page-0001](https://github.com/user-attachments/assets/3d7bbfd0-4905-4c67-9d52-9220537db81b) ![extra_page-0001](https://github.com/user-attachments/assets/0d7565f2-2a61-4108-992f-81ea5be490a7)
+
+
+
+
 
 
 Model,Görevi,Neden Seçildi?
@@ -57,7 +61,8 @@ unrelated (Alakasız)	0.89	0.93	0.91
 bot_identity	0.86	0.95	0.90
 Tıbbi Niyetler (Ortalama)	~0.70	~0.70	~0.70
 
-![alt text](Figure_1.png) Confusion Matrix
+<img width="1000" height="700" alt="Figure_1" src="https://github.com/user-attachments/assets/0b2bfe1b-b23b-4ba3-9362-b46b359227f0" />
+
 
 
 Not: Tıbbi niyetlerin birbirine karışması (örn: yan etkiler vs. uyarılar) doğaldır, ancak sistem bu durumlarda her halükarda RAG'a gittiği için kullanıcı doğru cevabı almaya devam eder.
@@ -102,4 +107,5 @@ accutane.pdf: Bilgi kaynağı (Prospektüs).
 streamlit run app.py
 ⚠️ Yasal Uyarı
 Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+
 
