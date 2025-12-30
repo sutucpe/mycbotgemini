@@ -3,11 +3,12 @@ Bu proje, Accutane (Roaccutane) tedavisi hakkında merak edilenleri yanıtlamak 
 Uygulama, kullanıcı niyetini anlamak için Scikit-Learn (SVM), tıbbi sorulara kesin ve doğru cevaplar vermek için ise RAG (Retrieval-Augmented Generation) & Gemini teknolojilerini birleştirir.
 
 Ornek Gorseller
-![1_page-0001](https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a) ![3_page-0001](https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606) ![Accutane AI Assistant_page-0001](https://github.com/user-attachments/assets/3d7bbfd0-4905-4c67-9d52-9220537db81b) ![extra_page-0001](https://github.com/user-attachments/assets/0d7565f2-2a61-4108-992f-81ea5be490a7)
-
-
-
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a" width="22%" />
+  <img src="https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606" width="22%" />
+  <img src="https://github.com/user-attachments/assets/3d7bbfd0-4905-4c67-9d52-9220537db81b" width="22%" />
+  <img src="https://github.com/user-attachments/assets/0d7565f2-2a61-4108-992f-81ea5be490a7" width="22%" />
+</p>
 
 
 Model,Görevi,Neden Seçildi?
@@ -107,5 +108,6 @@ accutane.pdf: Bilgi kaynağı (Prospektüs).
 streamlit run app.py
 ⚠️ Yasal Uyarı
 Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+
 
 
