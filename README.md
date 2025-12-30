@@ -62,8 +62,11 @@ unrelated (Alakasız)	0.89	0.93	0.91
 bot_identity	0.86	0.95	0.90
 Tıbbi Niyetler (Ortalama)	~0.70	~0.70	~0.70
 
-<img width="1000" height="700" alt="Figure_1" src="https://github.com/user-attachments/assets/0b2bfe1b-b23b-4ba3-9362-b46b359227f0" />
-
+<img
+  src="https://github.com/user-attachments/assets/0b2bfe1b-b23b-4ba3-9362-b46b359227f0"
+  width="25%"
+  alt="Figure_1"
+/>
 
 
 Not: Tıbbi niyetlerin birbirine karışması (örn: yan etkiler vs. uyarılar) doğaldır, ancak sistem bu durumlarda her halükarda RAG'a gittiği için kullanıcı doğru cevabı almaya devam eder.
@@ -108,6 +111,7 @@ accutane.pdf: Bilgi kaynağı (Prospektüs).
 streamlit run app.py
 ⚠️ Yasal Uyarı
 Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+
 
 
 
