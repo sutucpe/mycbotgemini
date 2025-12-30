@@ -118,24 +118,24 @@ Gerekli bilginin %97.5’i doğru şekilde getiriliyor.
 Cevaplar soruyla yüksek oranda alakalı.
 
 🍳 Veri Seti Hazırlama Süreci
+Intent Classification Verisi
+1. Kategorizasyon: Sorular 11 farklı sınıfa ayrıldı.
 
-Bu başarının arkasında sistematik bir veri üretimi vardır:
+2. Sentetik Veri Üretimi: Gemini 3 Pro kullanılarak her örnek cümleler kullanılarak her kategori için varyasyonlu cümleler üretildi (Toplam 1200 cümle).
 
-Kategorizasyon
+3 Eğitim: %80 Eğitim - %20 Test bölünerek SVC modeli eğitildi.
 
-Toplam 11 intent sınıfı belirlendi
+RAG Test Verisi ("Ground Truth")
+1 Örnekleme: Sistemden rastgele 10 adet "Soru - Cevap - Bağlam" üçlüsü alındı.
 
-Yapay Zeka Destekli Üretim
+2 Referans Üretimi: Gemini 3 Pro'ya accutane.pdf verilerek "Bu sorular için belgedeki en doğru cevabı oluştur" talimatı verildi.
 
-Gemini 3 Pro kullanılarak
+3 Kıyaslama: Elde edilen referans cevaplar (Ground Truth) ile sistemin ürettiği cevaplar Ragas kütüphanesi ile karşılaştırıldı.
 
-1200 etiketli cümle oluşturuldu
 
-Eğitim
 
-%80 Eğitim / %20 Test
 
-SVC (Support Vector Classifier) ile model eğitildi
+
 
 
 
