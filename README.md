@@ -2,7 +2,7 @@ Bu proje, Accutane (Roaccutane) tedavisi hakkında merak edilenleri yanıtlamak 
 
 Uygulama, kullanıcı niyetini anlamak için Scikit-Learn (SVM), tıbbi sorulara kesin ve doğru cevaplar vermek için ise RAG (Retrieval-Augmented Generation) & Gemini teknolojilerini birleştirir.
 
-Ornek Gorseller
+Chat Ornekleri 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/15d8c7a2-85db-45e1-be6c-74a7907ece9a" width="22%" />
   <img src="https://github.com/user-attachments/assets/655c2f09-5c89-4ce7-aa0f-b66ee5047606" width="22%" />
@@ -108,6 +108,7 @@ accutane.pdf: Bilgi kaynağı (Prospektüs).
 streamlit run app.py
 ⚠️ Yasal Uyarı
 Bu asistan eğitim amaçlıdır ve tıbbi tavsiye yerine geçmez. Sağlık sorunlarınızda mutlaka doktorunuza danışın.
+
 
 
 
