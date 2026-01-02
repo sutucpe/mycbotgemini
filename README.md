@@ -130,9 +130,10 @@ RAG Test Verisi ("Ground Truth")
 
 2 Referans Üretimi: Gemini 3 Pro'ya accutane.pdf verilerek "Bu sorular için belgedeki en doğru cevabı oluştur" talimatı verildi.
 
-3 Kıyaslama: Elde edilen referans cevaplar (Ground Truth) ile sistemin ürettiği cevaplar Ragas kütüphanesi ile karşılaştırıldı.
+3 Kıyaslama: Elde edilen referans cevaplar (Ground Truth) ile sistemin ürettiği cevaplar Ragas kütüphanesi ile karşılaştırıldı.Hakem olarak OpenAI modeli GPT-4o-mini kullanıldı.
 
 Video Link : https://drive.google.com/file/d/1iuVXxY0ZyvUqJyvXlZtwZVutvF2B9MXU/view?usp=sharing
+
 
 
 
